@@ -2,19 +2,19 @@
 package ohtu.intjoukkosovellus;
 
 import java.util.Arrays;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class JoukkoOperaatiotTest {
     
+    Laskin laskin = new Laskin();
     
     @Test
     public void testSomething() {
         IntJoukko eka = teeJoukko(1,2);
         IntJoukko toka = teeJoukko(3,4);
         
-        IntJoukko tulos = IntJoukko.yhdiste(eka, toka);
+        IntJoukko tulos = laskin.yhdiste(eka, toka);
         int[] vastauksenLuvut = tulos.toIntArray();
         Arrays.sort(vastauksenLuvut);
         
@@ -27,7 +27,7 @@ public class JoukkoOperaatiotTest {
         IntJoukko joukko = new IntJoukko();
         
         for (int luku : luvut) {
-            joukko.lisaa(luku);
+            joukko.lisaaLuku(luku);
         }
         
         return joukko;
